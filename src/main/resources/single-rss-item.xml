@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+<channel>
+<title>International Journal of Yoga : 2021 - 14(2)</title>
+<link>https://www.ijoy.org.in/currentissue.asp</link>
+<description>Int J Yoga 2021 - 14(2)</description>
+<prism:publicationName>International Journal of Yoga</prism:publicationName>
+<prism:publisher>Medknow Publications</prism:publisher>
+<prism:issn>0973-6131</prism:issn>
+<atom:link href="https://www.ijoy.org.in/rss.asp?issn=0973-6131;year=2021;volume=14;issue=2;month=May-August" rel="self" type="application/rdf+xml"/>
+<item>
+<title>Ethics in Yoga</title>
+<dc:creator>TM Srinivasan</dc:creator>
+<dc:type>Editorial</dc:type>
+<dc:source>International Journal of Yoga 2021 14(2):87-88</dc:source>
+<dc:identifier>doi:10.4103/ijoy.IJOY_40_21</dc:identifier>
+<prism:publicationName>International Journal of Yoga</prism:publicationName>
+<prism:doi>10.4103/ijoy.IJOY_40_21</prism:doi>
+<prism:url>https://www.ijoy.org.in/text.asp?2021/14/2/87/315760</prism:url>
+<feedburner:origLink>https://www.ijoy.org.in/text.asp?2021/14/2/87/315760</feedburner:origLink>
+<prism:volume>14</prism:volume>
+<prism:number>2</prism:number>
+<prism:startingPage>87</prism:startingPage>
+<prism:endingPage>88</prism:endingPage>
+<guid>https://www.ijoy.org.in/text.asp?2021/14/2/87/315760</guid>
+<description>
+<![CDATA[ <b>TM Srinivasan</b><br><br>International Journal of Yoga 2021 14(2):87-88<br><br> ]]>
+</description>
+<pubDate>Mon,10 May 2021</pubDate>
+<link>https://www.ijoy.org.in/text.asp?2021/14/2/87/315760</link>
+</item>
+</channel>
+</rss>

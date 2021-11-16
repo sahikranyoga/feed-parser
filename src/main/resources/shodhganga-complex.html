@@ -1,0 +1,2105 @@
+<!-- https://shodhganga.inflibnet.ac.in/simple-search?location=%2F&query=yoga&rpp=300&sort_by=score&order=desc&filter_field_1=subject&filter_type_1=equals&filter_value_1=Yoga&submit_filter_remove_1=X&filter_field_2=subject&filter_type_2=equals&filter_value_2=Ayurveda -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shodhganga@INFLIBNET: Search</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="Generator" content="DSpace 5.3" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/jspui/favicon.ico" type="image/x-icon"/>
+	    <link rel="stylesheet" href="/jspui/static/css/jquery-ui-1.10.3.custom/redmond/jquery-ui-1.10.3.custom.css" type="text/css" />
+	    <link rel="stylesheet" href="/jspui/static/css/bootstrap/bootstrap.min.css" type="text/css" />
+	    <link rel="stylesheet" href="/jspui/static/css/bootstrap/bootstrap-theme.min.css" type="text/css" />
+	    <link rel="stylesheet" href="/jspui/static/css/bootstrap/dspace-theme.css" type="text/css" />
+
+        <link rel="search" type="application/opensearchdescription+xml" href="/jspui/open-search/description.xml" title="DSpace"/>
+
+        
+	<script type='text/javascript' src="/jspui/static/js/jquery/jquery-1.10.2.min.js"></script>
+	<script type='text/javascript' src='/jspui/static/js/jquery/jquery-ui-1.10.3.custom.min.js'></script>
+	<script type='text/javascript' src='/jspui/static/js/bootstrap/bootstrap.min.js'></script>
+	<script type='text/javascript' src='/jspui/static/js/holder.js'></script>
+	<script type="text/javascript" src="/jspui/utils.js"></script>
+    <script type="text/javascript" src="/jspui/static/js/choice-support.js"> </script>
+
+    
+    
+		<script type="text/javascript">
+	var jQ = jQuery.noConflict();
+	jQ(document).ready(function() {
+		jQ( "#spellCheckQuery").click(function(){
+			jQ("#query").val(jQ(this).attr('data-spell'));
+			jQ("#main-query-submit").click();
+		});
+		jQ( "#filterquery" )
+			.autocomplete({
+				source: function( request, response ) {
+					jQ.ajax({
+						url: "/jspui/json/discovery/autocomplete?query=yoga&filter_field_1=subject&filter_type_1=equals&filter_value_1=Ayurveda",
+						dataType: "json",
+						cache: false,
+						data: {
+							auto_idx: jQ("#filtername").val(),
+							auto_query: request.term,
+							auto_sort: 'count',
+							auto_type: jQ("#filtertype").val(),
+							location: ''	
+						},
+						success: function( data ) {
+							response( jQ.map( data.autocomplete, function( item ) {
+								var tmp_val = item.authorityKey;
+								if (tmp_val == null || tmp_val == '')
+								{
+									tmp_val = item.displayedValue;
+								}
+								return {
+									label: item.displayedValue + " (" + item.count + ")",
+									value: tmp_val
+								};
+							}))			
+						}
+					})
+				}
+			});
+	});
+	function validateFilters() {
+		return document.getElementById("filterquery").value.length > 0;
+	}
+</script>
+		
+    
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="/jspui/static/js/html5shiv.js"></script>
+  <script src="/jspui/static/js/respond.min.js"></script>
+<![endif]-->
+    </head>
+
+    
+    
+    <body class="undernavigation">
+<a class="sr-only" href="#content">Skip navigation</a>
+<header class="navbar navbar-inverse navbar-fixed-top">    
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155197711-1"></script>
+	<script>
+	 window.dataLayer = window.dataLayer || [];
+	 function gtag(){dataLayer.push(arguments);}
+	 gtag('js', new Date());
+
+	 gtag('config', 'UA-155197711-1');
+	</script>
+            <div class="container">
+       <div class="navbar-header">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155197711-1"></script>
+	<script>
+	 window.dataLayer = window.dataLayer || [];
+	 function gtag(){dataLayer.push(arguments);}
+	 gtag('js', new Date());
+
+	 gtag('config', 'UA-155197711-1');
+	</script>
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="/jspui/"><img height="25" src="/jspui/image/dspace-logo-only.png" alt="DSpace logo" /></a>
+       </div>
+       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+         <ul class="nav navbar-nav">
+           <li class=""><a href="/jspui/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                
+           <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse <b class="caret"></b></a>
+             <ul class="dropdown-menu">
+               <li><a href="/jspui/community-list">Universities<br/>&amp;&nbsp;Departments</a></li>
+				<li class="divider"></li>
+        <li class="dropdown-header">Browse by :</li>
+				
+				
+				
+				      			<li><a href="/jspui/browse?type=dateaccessioned">Upload Date</a></li>
+					
+				      			<li><a href="/jspui/browse?type=author">Researcher/Guide</a></li>
+					
+				      			<li><a href="/jspui/browse?type=title">Title</a></li>
+					
+				      			<li><a href="/jspui/browse?type=keyword">Keyword</a></li>
+					
+				    
+				
+
+            </ul>
+          </li>
+          <li class=""><script type="text/javascript">
+<!-- Javascript starts here
+document.write('<a href="#" onClick="var popupwin = window.open(\'/jspui/help/index.html\',\'dspacepopup\',\'height=600,width=550,resizable,scrollbars\');popupwin.focus();return false;">Help<\/a>');
+// -->
+</script><noscript><a href="/jspui/help/index.html" target="dspacepopup">Help</a></noscript></li>
+       </ul>
+
+ 
+ 
+       <div class="nav navbar-nav navbar-right">
+		<ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+         
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Sign on to: <b class="caret"></b></a>
+	             
+             <ul class="dropdown-menu">
+               <li><a href="/jspui/mydspace">My Shodhganga</a></li>
+               <li><a href="/jspui/subscribe">Receive email<br/>updates</a></li>
+               <li><a href="/jspui/profile">Edit Profile</a></li>
+
+		
+             </ul>
+           </li>
+          </ul>
+          
+	
+	<form method="get" action="/jspui/simple-search" class="navbar-form navbar-right">
+	    <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search&nbsp;Shodhganga" name="query" id="tequery" size="25"/>
+        </div>
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+
+	</form></div>
+    </nav>
+
+            </div> 
+
+</header>
+
+<main id="content" role="main">
+<div class="container banner">
+	<div class="row">
+		<div class="col-md-9 brand">
+		<h1><font color="orange">Shodhganga</font><small><font color="green"> : a reservoir of Indian theses @ INFLIBNET</font></small></h1>
+        The Shodhganga@INFLIBNET Centre provides a platform for research students to deposit their Ph.D. theses and make it available to the entire scholarly community in open access. <a href="https://sg.inflibnet.ac.in" class="btn btn-primary">Shodhganga Mirror Site</a> 
+        </div>
+        <div class="col-md-3"><img class="pull-right" src="/jspui/image/logo.gif" alt="DSpace logo" />
+        </div>
+	</div>
+</div>	
+<br/>
+                
+
+<div class="container">
+                
+
+
+
+  
+
+<ol class="breadcrumb btn-success">
+
+  <li><a href="/jspui/">Shodhganga@INFLIBNET</a></li>
+
+</ol>
+
+</div>                
+
+
+
+        
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-9">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<h2>Search</h2>
+
+<div class="discovery-search-form panel panel-default">
+    
+	<div class="discovery-query panel-heading">
+    <form action="simple-search" method="get">
+         <label for="tlocation">
+         	Search:
+         </label>
+         <select name="location" id="tlocation">
+
+                                    
+                                    <option selected="selected" value="/">All of Shodhganga</option>
+
+                                <option value="10603/8037" >
+                                	Acharya Nagarjuna University</option>
+
+                                <option value="10603/289498" >
+                                	Acharya Narendra Deva University of Agriculture and Technology, Ayodhya</option>
+
+                                <option value="10603/239308" >
+                                	Adesh University</option>
+
+                                <option value="10603/267830" >
+                                	Adikavi Nannaya University, Rajahmundry</option>
+
+                                <option value="10603/182446" >
+                                	Ahmedabad University</option>
+
+                                <option value="10603/310231" >
+                                	AKS University</option>
+
+                                <option value="10603/2767" >
+                                	Alagappa University</option>
+
+                                <option value="10603/8589" >
+                                	Aligarh Muslim University</option>
+
+                                <option value="10603/72798" >
+                                	Alliance University</option>
+
+                                <option value="10603/208397" >
+                                	Ambedkar University, Delhi</option>
+
+                                <option value="10603/190485" >
+                                	AMET University</option>
+
+                                <option value="10603/261914" >
+                                	Amity University Haryana</option>
+
+                                <option value="10603/206491" >
+                                	Amity University Madhya Pradesh</option>
+
+                                <option value="10603/10483" >
+                                	Amity University, Noida</option>
+
+                                <option value="10603/262670" >
+                                	Amity University Rajasthan</option>
+
+                                <option value="10603/2354" >
+                                	Amrita Vishwa Vidyapeetham University</option>
+
+                                <option value="10603/8643" >
+                                	Andhra University</option>
+
+                                <option value="10603/7758" >
+                                	Annamalai University</option>
+
+                                <option value="10603/7754" >
+                                	Anna University</option>
+
+                                <option value="10603/263880" >
+                                	Apeejay Stya University</option>
+
+                                <option value="10603/304414" >
+                                	A P Goyal Shimla University</option>
+
+                                <option value="10603/209524" >
+                                	Arni University</option>
+
+                                <option value="10603/277303" >
+                                	Aryabhatta knowledge University</option>
+
+                                <option value="10603/318665" >
+                                	Assam Agricultural University</option>
+
+                                <option value="10603/64999" >
+                                	Assam Don Bosco University</option>
+
+                                <option value="10603/221844" >
+                                	Assam Down Town University</option>
+
+                                <option value="10603/299013" >
+                                	Assam Science and Technology University</option>
+
+                                <option value="10603/12989" >
+                                	Assam University</option>
+
+                                <option value="10603/1452" >
+                                	Avinashilingam Institute for Home Science and Higher Education for Women</option>
+
+                                <option value="10603/223885" >
+                                	Awadhesh Pratap Singh University</option>
+
+                                <option value="10603/18897" >
+                                	Baba Ghulam Shah Badshah University</option>
+
+                                <option value="10603/12424" >
+                                	Babasaheb Bhimrao Ambedkar University</option>
+
+                                <option value="10603/72953" >
+                                	Babu Banarasi Das University</option>
+
+                                <option value="10603/2849" >
+                                	Banaras Hindu University</option>
+
+                                <option value="10603/7737" >
+                                	Banasthali Vidyapith</option>
+
+                                <option value="10603/7748" >
+                                	Bangalore University</option>
+
+                                <option value="10603/318717" >
+                                	Bankura University</option>
+
+                                <option value="10603/225987" >
+                                	Barkatullah University</option>
+
+                                <option value="10603/346042" >
+                                	Berhampur University</option>
+
+                                <option value="10603/181626" >
+                                	Bhagat Phool Singh Mahila Vishwavidyalaya</option>
+
+                                <option value="10603/28881" >
+                                	Bhagwant University</option>
+
+                                <option value="10603/3" >
+                                	Bharathiar University</option>
+
+                                <option value="10603/4757" >
+                                	Bharathidasan University</option>
+
+                                <option value="10603/23" >
+                                	Bharath University</option>
+
+                                <option value="10603/99723" >
+                                	Bharati Vidyapeeth Deemed University</option>
+
+                                <option value="10603/343506" >
+                                	Bhartiya Skill Development University Jaipur</option>
+
+                                <option value="10603/28888" >
+                                	Bhupendra Narayan Mandal University</option>
+
+                                <option value="10603/24860" >
+                                	Birla Institute of Technology and Science</option>
+
+                                <option value="10603/45796" >
+                                	BLDE (Deemed to be University)</option>
+
+                                <option value="10603/206118" >
+                                	Bodoland University</option>
+
+                                <option value="10603/9858" >
+                                	B S Abdur Rahman Crescent Institute of Science & Technology</option>
+
+                                <option value="10603/4162" >
+                                	Bundelkhand University</option>
+
+                                <option value="10603/148062" >
+                                	Calorx Teachers University</option>
+
+                                <option value="10603/256310" >
+                                	Career Point University</option>
+
+                                <option value="10603/98700" >
+                                	Central University of Gujarat</option>
+
+                                <option value="10603/186055" >
+                                	Central University of Haryana</option>
+
+                                <option value="10603/213369" >
+                                	Central University of Himachal Pradesh</option>
+
+                                <option value="10603/214509" >
+                                	Central University of Jammu</option>
+
+                                <option value="10603/213580" >
+                                	Central University of Jharkhand</option>
+
+                                <option value="10603/226279" >
+                                	Central University of Karnataka</option>
+
+                                <option value="10603/176062" >
+                                	Central University of Kashmir</option>
+
+                                <option value="10603/120519" >
+                                	Central University of Kerala</option>
+
+                                <option value="10603/166769" >
+                                	Central University of Orissa</option>
+
+                                <option value="10603/121827" >
+                                	Central University of Punjab</option>
+
+                                <option value="10603/150244" >
+                                	Central University of Rajasthan</option>
+
+                                <option value="10603/218683" >
+                                	Central University of South Bihar</option>
+
+                                <option value="10603/218425" >
+                                	Central University of Tamil Nadu</option>
+
+                                <option value="10603/49433" >
+                                	Centurion University of Technology and Management</option>
+
+                                <option value="10603/204860" >
+                                	Chandigarh University</option>
+
+                                <option value="10603/42936" >
+                                	Charotar University of Science and Technology</option>
+
+                                <option value="10603/7722" >
+                                	Chaudhary Charan Singh University</option>
+
+                                <option value="10603/208715" >
+                                	Chaudhary Devi Lal University</option>
+
+                                <option value="10603/224890" >
+                                	Chaudhary Ranbir Singh University</option>
+
+                                <option value="10603/8966" >
+                                	Chaudhary Sarwan Kumar Himachal Pradesh Krishi Vishvavidyalaya</option>
+
+                                <option value="10603/174732" >
+                                	Chettinad Academy of Research and Education</option>
+
+                                <option value="10603/2072" >
+                                	Chhatrapati Sahuji Maharaj University</option>
+
+                                <option value="10603/295760" >
+                                	Chhattisgarh Swami Vivekanand Technical University</option>
+
+                                <option value="10603/310283" >
+                                	Childrens University</option>
+
+                                <option value="10603/45870" >
+                                	Chitkara University</option>
+
+                                <option value="10603/77714" >
+                                	Chitkara University, Punjab</option>
+
+                                <option value="10603/34354" >
+                                	CHRIST University</option>
+
+                                <option value="10603/304239" >
+                                	CMR University</option>
+
+                                <option value="10603/848" >
+                                	Cochin University of Science & Technology</option>
+
+                                <option value="10603/103556" >
+                                	C.U. Shah University</option>
+
+                                <option value="10603/91247" >
+                                	Datta Meghe Institute of Medical Sciences</option>
+
+                                <option value="10603/290001" >
+                                	Davangere University</option>
+
+                                <option value="10603/331851" >
+                                	DAV University</option>
+
+                                <option value="10603/6881" >
+                                	Dayalbagh Educational Institute</option>
+
+                                <option value="10603/303892" >
+                                	Dayananda Sagar University</option>
+
+                                <option value="10603/8150" >
+                                	Deccan College Post Graduate And Research Institute</option>
+
+                                <option value="10603/12428" >
+                                	Deen Dayal Upadhyay Gorakhpur University</option>
+
+                                <option value="10603/186535" >
+                                	Delhi Technological University</option>
+
+                                <option value="10603/198458" >
+                                	Desh Bhagat University</option>
+
+                                <option value="10603/8832" >
+                                	Devi Ahilya Vishwavidyalaya</option>
+
+                                <option value="10603/48078" >
+                                	Dhirubhai Ambani Institute of Information and Communication Technology (DA-IICT)</option>
+
+                                <option value="10603/32758" >
+                                	Dibrugarh University</option>
+
+                                <option value="10603/218581" >
+                                	DIT University</option>
+
+                                <option value="10603/218585" >
+                                	Doon University</option>
+
+                                <option value="10603/303456" >
+                                	Dr. A.P.J. Abdul Kalam Technical University</option>
+
+                                <option value="10603/6383" >
+                                	Dravidian University</option>
+
+                                <option value="10603/9315" >
+                                	Dr. Babasaheb Ambedkar Marathwada University</option>
+
+                                <option value="10603/226181" >
+                                	Dr. Babasaheb Ambedkar Open University</option>
+
+                                <option value="10603/26542" >
+                                	Dr. Babasaheb Ambedkar Technological University</option>
+
+                                <option value="10603/222061" >
+                                	Dr. B. R. Ambedkar University Agra</option>
+
+                                <option value="10603/219476" >
+                                	Dr. C.V. Raman University</option>
+
+                                <option value="10603/37509" >
+                                	Dr. D. Y. Patil Vidhyapeeth, Pune</option>
+
+                                <option value="10603/8834" >
+                                	Dr. Harisingh Gour Vishwavidhyalay</option>
+
+                                <option value="10603/254625" >
+                                	Dr. K N Modi Univerity</option>
+
+                                <option value="10603/44265" >
+                                	Dr. M.G.R. Educational and Research Institute</option>
+
+                                <option value="10603/226104" >
+                                	Dr. Rammanohar Lohia Avadh University, Faizabad</option>
+
+                                <option value="10603/122736" >
+                                	Dr Ram Manohar Lohiya National Law University</option>
+
+                                <option value="10603/295270" >
+                                	Dr. Sarvepalli Radhakrishnan Rajasthan Ayurved University</option>
+
+                                <option value="10603/338006" >
+                                	Dr Shakuntala Misra National Rehabilitation University</option>
+
+                                <option value="10603/4950" >
+                                	D Y Patil University, Kolhapur</option>
+
+                                <option value="10603/45922" >
+                                	Eternal University</option>
+
+                                <option value="10603/6173" >
+                                	Forest Research Institute University</option>
+
+                                <option value="10603/209447" >
+                                	Galgotias University</option>
+
+                                <option value="10603/35825" >
+                                	Ganpat University</option>
+
+                                <option value="10603/5442" >
+                                	Gauhati University</option>
+
+                                <option value="10603/76515" >
+                                	G.B.Pant University of Agriculture & Technology</option>
+
+                                <option value="10603/230913" >
+                                	GD Goenka University</option>
+
+                                <option value="10603/180654" >
+                                	Geetanjali University</option>
+
+                                <option value="10603/89992" >
+                                	GITAM University</option>
+
+                                <option value="10603/125742" >
+                                	GLA University</option>
+
+                                <option value="10603/316647" >
+                                	Glocal University</option>
+
+                                <option value="10603/287023" >
+                                	GLS University</option>
+
+                                <option value="10603/315192" >
+                                	GNA University</option>
+
+                                <option value="10603/6586" >
+                                	Goa University</option>
+
+                                <option value="10603/130603" >
+                                	Gokhale Institute of Politics and Economics</option>
+
+                                <option value="10603/309098" >
+                                	Gondwana University</option>
+
+                                <option value="10603/119068" >
+                                	Graphic Era Hill University Dehradun</option>
+
+                                <option value="10603/5130" >
+                                	Graphic Era University</option>
+
+                                <option value="10603/5957" >
+                                	Gujarat Ayurveda University</option>
+
+                                <option value="10603/13785" >
+                                	Gujarat Forensic Sciences University</option>
+
+                                <option value="10603/68184" >
+                                	Gujarat National Law University</option>
+
+                                <option value="10603/86845" >
+                                	Gujarat Technological University</option>
+
+                                <option value="10603/3846" >
+                                	Gujarat University</option>
+
+                                <option value="10603/6664" >
+                                	Gujarat Vidyapith</option>
+
+                                <option value="10603/8838" >
+                                	Gulbarga University</option>
+
+                                <option value="10603/32398" >
+                                	Guru Angad Dev Veterinary and Animal Sciences University</option>
+
+                                <option value="10603/9408" >
+                                	Guru Ghasidas University</option>
+
+                                <option value="10603/86074" >
+                                	Guru Gobind Singh Indraprastha University</option>
+
+                                <option value="10603/42950" >
+                                	Guru Jambheshwar University of Science & Technology</option>
+
+                                <option value="10603/160073" >
+                                	Guru Kashi University</option>
+
+                                <option value="10603/8435" >
+                                	Gurukul Kangri Vishwavidyalaya</option>
+
+                                <option value="10603/2806" >
+                                	Guru Nanak Dev University</option>
+
+                                <option value="10603/10912" >
+                                	Hemchandracharya North Gujarat University</option>
+
+                                <option value="10603/12285" >
+                                	Hemwati Nandan Bahuguna Garhwal University</option>
+
+                                <option value="10603/8266" >
+                                	Himachal Pradesh University</option>
+
+                                <option value="10603/340387" >
+                                	Himalayan Garhwal University</option>
+
+                                <option value="10603/338621" >
+                                	Himgiri Zee University</option>
+
+                                <option value="10603/73740" >
+                                	Hindustan University</option>
+
+                                <option value="10603/4686" >
+                                	Homi Bhabha National Institute</option>
+
+                                <option value="10603/10607" >
+                                	ICFAI Foundation for Higher Education, Hyderabad</option>
+
+                                <option value="10603/232088" >
+                                	ICFAI University, Dimapur Nagaland</option>
+
+                                <option value="10603/72702" >
+                                	ICFAI University, Jharkhand</option>
+
+                                <option value="10603/295032" >
+                                	ICFAI University, Tripura</option>
+
+                                <option value="10603/197592" >
+                                	IEC University</option>
+
+                                <option value="10603/31348" >
+                                	IFTM University</option>
+
+                                <option value="10603/19751" >
+                                	IIS (Deemed to be University)</option>
+
+                                <option value="10603/8803" >
+                                	I K Gujral Punjab Technical University</option>
+
+                                <option value="10603/9224" >
+                                	Indian Institute Information Technology, Design and Manufacturing, Jabalpur</option>
+
+                                <option value="10603/6689" >
+                                	Indian Institute of Foreign Trade</option>
+
+                                <option value="10603/198505" >
+                                	Indian Institute of Information Technology Design & Manufacturing Kancheepuram</option>
+
+                                <option value="10603/318731" >
+                                	Indian Institute of Information Technology Guwahati</option>
+
+                                <option value="10603/73229" >
+                                	Indian Institute of Management (IIM),Indore</option>
+
+                                <option value="10603/187485" >
+                                	Indian Institute of Space Science and Technology</option>
+
+                                <option value="10603/335654" >
+                                	Indian Institute of Teacher Education</option>
+
+                                <option value="10603/220071" >
+                                	Indian Maritime University</option>
+
+                                <option value="10603/7902" >
+                                	Indian School of Mines</option>
+
+                                <option value="10603/285839" >
+                                	Indira Gandhi Delhi Technical University for Women</option>
+
+                                <option value="10603/121033" >
+                                	Indira Gandhi National Open University IGNOU</option>
+
+                                <option value="10603/251310" >
+                                	Indira Gandhi National Tribal University, Amarkantak</option>
+
+                                <option value="10603/89656" >
+                                	Indira Gandhi University Meerpur,Rewari</option>
+
+                                <option value="10603/289633" >
+                                	Indira Kala Sangeet Vishwavidyalaya</option>
+
+                                <option value="10603/26896" >
+                                	Indraprastha Institute of Information Technology, Delhi (IIIT-Delhi)</option>
+
+                                <option value="10603/221083" >
+                                	Indus University</option>
+
+                                <option value="10603/289808" >
+                                	Institute of Advanced Research, Gandhinagar</option>
+
+                                <option value="10603/26993" >
+                                	Institute of Advanced Studies in Education (IASE)</option>
+
+                                <option value="10603/9053" >
+                                	Institute of Chemical Technnology, Mumbai</option>
+
+                                <option value="10603/303548" >
+                                	Institute of Infrastructure Technology Research and Management</option>
+
+                                <option value="10603/259653" >
+                                	Institute of Trans-disciplinary Health Science & Technology</option>
+
+                                <option value="10603/3390" >
+                                	Integral University</option>
+
+                                <option value="10603/184526" >
+                                	International Institute for Population Sciences IIPS</option>
+
+                                <option value="10603/6107" >
+                                	International Institute of Information Technology Bangalore</option>
+
+                                <option value="10603/45298" >
+                                	International Institute of Information Technology, Hyderabad</option>
+
+                                <option value="10603/138916" >
+                                	Islamic University of Science and Technology</option>
+
+                                <option value="10603/199915" >
+                                	ITM University, Gwalior</option>
+
+                                <option value="10603/2812" >
+                                	Jadavpur University</option>
+
+                                <option value="10603/72443" >
+                                	Jagannath University</option>
+
+                                <option value="10603/289585" >
+                                	Jagannath University, Jhajjar</option>
+
+                                <option value="10603/230346" >
+                                	Jagran Lakecity University</option>
+
+                                <option value="10603/7131" >
+                                	Jai Narain Vyas University</option>
+
+                                <option value="10603/44795" >
+                                	Jain University</option>
+
+                                <option value="10603/8439" >
+                                	Jain Vishwa Bharati University</option>
+
+                                <option value="10603/25047" >
+                                	Jai Prakash Vishwavidyalaya</option>
+
+                                <option value="10603/244876" >
+                                	Jaipur National University</option>
+
+                                <option value="10603/7773" >
+                                	Jamia Hamdard University</option>
+
+                                <option value="10603/7771" >
+                                	Jamia Milia Islamia University</option>
+
+                                <option value="10603/24057" >
+                                	Janardan Rai Nagar Rajasthan Vidhyapeeth</option>
+
+                                <option value="10603/9226" >
+                                	Jawaharlal Nehru Technological University, Anantapuram</option>
+
+                                <option value="10603/2163" >
+                                	Jawaharlal Nehru Technological University, Hyderabad</option>
+
+                                <option value="10603/60" >
+                                	Jawaharlal Nehru University</option>
+
+                                <option value="10603/160528" >
+                                	Jayoti Vidyapeeth Women s University</option>
+
+                                <option value="10603/2405" >
+                                	Jaypee Institute of Information Technology</option>
+
+                                <option value="10603/9377" >
+                                	Jaypee University of Engineering & Technology, Guna</option>
+
+                                <option value="10603/10503" >
+                                	Jaypee University of Information Technology, Solan</option>
+
+                                <option value="10603/12312" >
+                                	JECRC University</option>
+
+                                <option value="10603/199106" >
+                                	Jharkhand Rai University</option>
+
+                                <option value="10603/2861" >
+                                	Jiwaji University</option>
+
+                                <option value="10603/100942" >
+                                	JK Lakshmipat University</option>
+
+                                <option value="10603/204038" >
+                                	Jodhpur National University</option>
+
+                                <option value="10603/7038" >
+                                	JSS Academy of Higher Education & Research</option>
+
+                                <option value="10603/292033" >
+                                	J.S. University, Shikohabad</option>
+
+                                <option value="10603/78872" >
+                                	Junagadh Agricultural University</option>
+
+                                <option value="10603/6389" >
+                                	Kadi Sarva Vishwavidyalaya</option>
+
+                                <option value="10603/249827" >
+                                	Kakatiya University, Warangal</option>
+
+                                <option value="10603/25005" >
+                                	Kalasalingam University</option>
+
+                                <option value="10603/289914" >
+                                	Kalinga University</option>
+
+                                <option value="10603/261442" >
+                                	Kannada University</option>
+
+                                <option value="10603/2522" >
+                                	Kannur University</option>
+
+                                <option value="10603/302112" >
+                                	Karnataka Samskrit University</option>
+
+                                <option value="10603/48086" >
+                                	Karnataka State Open University</option>
+
+                                <option value="10603/8067" >
+                                	Karnataka State Womens University</option>
+
+                                <option value="10603/6776" >
+                                	Karnataka Veterinary, Animal and Fisheries Sciences University</option>
+
+                                <option value="10603/6408" >
+                                	Karnatak University</option>
+
+                                <option value="10603/231295" >
+                                	Karpagam University</option>
+
+                                <option value="10603/4973" >
+                                	Karunya University</option>
+
+                                <option value="10603/97070" >
+                                	Kavikulaguru Kalidas Sanskrit University</option>
+
+                                <option value="10603/291525" >
+                                	Kazi Nazrul University</option>
+
+                                <option value="10603/79523" >
+                                	KIIT University</option>
+
+                                <option value="10603/295284" >
+                                	King George Medical University</option>
+
+                                <option value="10603/5923" >
+                                	KLE University</option>
+
+                                <option value="10603/250107" >
+                                	Kolhan University</option>
+
+                                <option value="10603/25113" >
+                                	Koneru Lakshmaiah Education Foundation</option>
+
+                                <option value="10603/173178" >
+                                	Krantiguru Shyamji Krishna Verma Kachchh University</option>
+
+                                <option value="10603/12241" >
+                                	Krishna Institute of Medical Sciences University</option>
+
+                                <option value="10603/145533" >
+                                	Krishna Kanta Handiqui State Open University</option>
+
+                                <option value="10603/291520" >
+                                	Krishna University, Machilipatnam</option>
+
+                                <option value="10603/306317" >
+                                	K.R. Mangalam University, Gurgaon</option>
+
+                                <option value="10603/13013" >
+                                	Kumaun University</option>
+
+                                <option value="10603/2823" >
+                                	Kurukshetra University</option>
+
+                                <option value="10603/74638" >
+                                	Kushabhau Thakre Patrakarita Avam Jansanchar Vishwavidyalaya</option>
+
+                                <option value="10603/7751" >
+                                	Kuvempu University</option>
+
+                                <option value="10603/2201" >
+                                	Lakshmibai National University of Physical Education</option>
+
+                                <option value="10603/33189" >
+                                	Lingayas University</option>
+
+                                <option value="10603/11734" >
+                                	Lovely Professional University</option>
+
+                                <option value="10603/310382" >
+                                	Madan Mohan Malaviya University of Technology</option>
+
+                                <option value="10603/146332" >
+                                	Madhav University</option>
+
+                                <option value="10603/2776" >
+                                	Madhya Pradesh Bhoj (Open) University</option>
+
+                                <option value="10603/7760" >
+                                	Madurai Kamaraj University</option>
+
+                                <option value="10603/6386" >
+                                	Magadh University</option>
+
+                                <option value="10603/282861" >
+                                	Mahapurusha Srimanta Sankaradeva Viswavidyalaya</option>
+
+                                <option value="10603/263005" >
+                                	Maharaja Agrasen University</option>
+
+                                <option value="10603/186787" >
+                                	Maharaja Ganga Singh University</option>
+
+                                <option value="10603/7739" >
+                                	Maharaja Krishnakumarsinhji Bhavnagar University</option>
+
+                                <option value="10603/4623" >
+                                	Maharaja Sayajirao University of Baroda</option>
+
+                                <option value="10603/310220" >
+                                	Maharaja Vinayak Global University</option>
+
+                                <option value="10603/2138" >
+                                	Maharashtra Animal and Fishery Sciences University</option>
+
+                                <option value="10603/289617" >
+                                	Maharashtra University of Health Sciences</option>
+
+                                <option value="10603/10506" >
+                                	Maharishi Markandeshwar University, Mullana</option>
+
+                                <option value="10603/182884" >
+                                	Maharishi Markandeshwar University, Sadopur (Ambala)</option>
+
+                                <option value="10603/8824" >
+                                	Maharshi Dayanand Saraswati University</option>
+
+                                <option value="10603/6218" >
+                                	Maharshi Dayanand University</option>
+
+                                <option value="10603/9205" >
+                                	Mahatma Gandhi Antarrashtriya Hindi Vishwavidyalaya</option>
+
+                                <option value="10603/2060" >
+                                	Mahatma Gandhi Chitrakoot Gramodaya Vishwavidyalaya</option>
+
+                                <option value="10603/276598" >
+                                	Mahatma Gandhi Kashi Vidyapith</option>
+
+                                <option value="10603/313528" >
+                                	Mahatma Gandhi Univeristy of Medical Sciences & Technnology , Jaipur</option>
+
+                                <option value="10603/6" >
+                                	Mahatma Gandhi University</option>
+
+                                <option value="10603/274068" >
+                                	Mahatma Jyotiba Phule Rohilkhand University</option>
+
+                                <option value="10603/287250" >
+                                	Makhanlal Chaturvedi National University of Journalism and Communication, Bhopal</option>
+
+                                <option value="10603/9425" >
+                                	Manav Rachna International Institute of Research and Studies</option>
+
+                                <option value="10603/318957" >
+                                	Manav Rachna University</option>
+
+                                <option value="10603/301634" >
+                                	Mandsaur University</option>
+
+                                <option value="10603/6004" >
+                                	Mangalayatan University</option>
+
+                                <option value="10603/1" >
+                                	Mangalore University</option>
+
+                                <option value="10603/2335" >
+                                	Manipal Academy of Higher Education</option>
+
+                                <option value="10603/178123" >
+                                	Manipal University Jaipur</option>
+
+                                <option value="10603/3007" >
+                                	Manipur University</option>
+
+                                <option value="10603/652" >
+                                	Manonmaniam Sundaranar University</option>
+
+                                <option value="10603/151157" >
+                                	Martin Luther Christian University</option>
+
+                                <option value="10603/3341" >
+                                	MATS University</option>
+
+                                <option value="10603/6380" >
+                                	Maulana Abul Kalam Azad University of Technology</option>
+
+                                <option value="10603/12307" >
+                                	Maulana Azad National Urdu University</option>
+
+                                <option value="10603/302125" >
+                                	Meenakshi Academy of Higher Education and Research</option>
+
+                                <option value="10603/12296" >
+                                	Mewar University</option>
+
+                                <option value="10603/180868" >
+                                	MGM Institute of Health Sciences</option>
+
+                                <option value="10603/330060" >
+                                	MIT-ADT University, Pune</option>
+
+                                <option value="10603/1198" >
+                                	Mizoram University</option>
+
+                                <option value="10603/261956" >
+                                	Mody University of Science and Technology</option>
+
+                                <option value="10603/3710" >
+                                	Mohan Lal Sukhadia University</option>
+
+                                <option value="10603/26305" >
+                                	Monad University</option>
+
+                                <option value="10603/15634" >
+                                	Mother Teresa Womens University</option>
+
+                                <option value="10603/268806" >
+                                	M S Ramaiah University of Applied Sciences</option>
+
+                                <option value="10603/218524" >
+                                	MVN University,Palwal</option>
+
+                                <option value="10603/9310" >
+                                	Nagaland University</option>
+
+                                <option value="10603/4727" >
+                                	Narsee Monjee Institute of Management Studies</option>
+
+                                <option value="10603/205801" >
+                                	National Brain Research Centre</option>
+
+                                <option value="10603/294589" >
+                                	National Institute of Educational Planning and Administration (NIEPA)</option>
+
+                                <option value="10603/288774" >
+                                	National Institute of Food Technology Entrepreneurship and Management - NIFTEM</option>
+
+                                <option value="10603/268404" >
+                                	National Institute of Technology Delhi</option>
+
+                                <option value="10603/76449" >
+                                	National Institute of Technology,Kurukshetra</option>
+
+                                <option value="10603/318910" >
+                                	National Institute of Technology Srinagar</option>
+
+                                <option value="10603/218754" >
+                                	National Law Institute University, Bhopal</option>
+
+                                <option value="10603/204125" >
+                                	National Law School of India University</option>
+
+                                <option value="10603/321937" >
+                                	National Law University and Judicial Academy, Guwahati</option>
+
+                                <option value="10603/213871" >
+                                	National law University, Delhi</option>
+
+                                <option value="10603/330127" >
+                                	National Law University, Odisha</option>
+
+                                <option value="10603/171834" >
+                                	Navrachana University</option>
+
+                                <option value="10603/339617" >
+                                	Nehru Gram Bharati University</option>
+
+                                <option value="10603/2968" >
+                                	Netaji Subhas Open University</option>
+
+                                <option value="10603/236971" >
+                                	NIIT University</option>
+
+                                <option value="10603/213489" >
+                                	Nims University Rajasthan</option>
+
+                                <option value="10603/1325" >
+                                	Nirma University</option>
+
+                                <option value="10603/183594" >
+                                	Nitte University</option>
+
+                                <option value="10603/221949" >
+                                	Noida International University</option>
+
+                                <option value="10603/70307" >
+                                	Noorul Islam Centre for Higher Education</option>
+
+                                <option value="10603/5270" >
+                                	North-Eastern Hill University</option>
+
+                                <option value="10603/12327" >
+                                	North Eastern Regional Institute of Science and Technology (NERIST)</option>
+
+                                <option value="10603/8828" >
+                                	North Maharashtra University</option>
+
+                                <option value="10603/250791" >
+                                	OPJS University</option>
+
+                                <option value="10603/221126" >
+                                	Oriental University</option>
+
+                                <option value="10603/16211" >
+                                	Osmania University</option>
+
+                                <option value="10603/200546" >
+                                	Pacific University</option>
+
+                                <option value="10603/271328" >
+                                	Padmashree Dr. D.Y. Patil Vidyapeeth, Navi Mumbai</option>
+
+                                <option value="10603/38911" >
+                                	Pandit Deendayal Petroleum University</option>
+
+                                <option value="10603/2829" >
+                                	Panjab University</option>
+
+                                <option value="10603/200268" >
+                                	Parul University</option>
+
+                                <option value="10603/8844" >
+                                	Patna University</option>
+
+                                <option value="10603/316729" >
+                                	Peoples University, Bhopal</option>
+
+                                <option value="10603/4146" >
+                                	Periyar Maniammai University</option>
+
+                                <option value="10603/2100" >
+                                	Periyar University</option>
+
+                                <option value="10603/288909" >
+                                	PES University</option>
+
+                                <option value="10603/685" >
+                                	Pondicherry University</option>
+
+                                <option value="10603/72765" >
+                                	Poornima University</option>
+
+                                <option value="10603/301597" >
+                                	Potti Sreeramulu Telugu University</option>
+
+                                <option value="10603/136700" >
+                                	Pravara Institute of Medical Sciences</option>
+
+                                <option value="10603/249900" >
+                                	Presidency University</option>
+
+                                <option value="10603/339376" >
+                                	Presidency University, Karnataka</option>
+
+                                <option value="10603/2109" >
+                                	Prist University</option>
+
+                                <option value="10603/3293" >
+                                	Pt. Ravishankar Shukla University</option>
+
+                                <option value="10603/2063" >
+                                	Punjabi University</option>
+
+                                <option value="10603/208340" >
+                                	Rabindra Bharati University</option>
+
+                                <option value="10603/176320" >
+                                	Rabindranath Tagore University, Bhopal</option>
+
+                                <option value="10603/272548" >
+                                	Raffles University</option>
+
+                                <option value="10603/200708" >
+                                	Raiganj University</option>
+
+                                <option value="10603/151328" >
+                                	Rai University</option>
+
+                                <option value="10603/303664" >
+                                	Rajasthan Technical University, Kota</option>
+
+                                <option value="10603/107445" >
+                                	Rajiv Gandhi National University of Law Punjab</option>
+
+                                <option value="10603/290741" >
+                                	Rajiv Gandhi Proudyogiki Vishwavidyalaya</option>
+
+                                <option value="10603/7764" >
+                                	Rajiv Gandhi University</option>
+
+                                <option value="10603/345244" >
+                                	Ramakrishna Mission Vivekananda Educational and Research Institute</option>
+
+                                <option value="10603/75605" >
+                                	Ramakrishna Mission Vivekananda University</option>
+
+                                <option value="10603/226013" >
+                                	Rama University, Uttar Pradesh</option>
+
+                                <option value="10603/314607" >
+                                	Rani Channamma University</option>
+
+                                <option value="10603/9108" >
+                                	Rani Durgavati Vishwavidyalaya</option>
+
+                                <option value="10603/9432" >
+                                	Rashtrasant Tukadoji Maharaj Nagpur University</option>
+
+                                <option value="10603/204902" >
+                                	Rashtriya Raksha University</option>
+
+                                <option value="10603/251186" >
+                                	Rayat Bahra University, Mohali</option>
+
+                                <option value="10603/301324" >
+                                	Regional Centre for Biotechnology</option>
+
+                                <option value="10603/273989" >
+                                	REVA University</option>
+
+                                <option value="10603/309402" >
+                                	RIMT University</option>
+
+                                <option value="10603/175906" >
+                                	RKDF University</option>
+
+                                <option value="10603/95047" >
+                                	RK University</option>
+
+                                <option value="10603/26144" >
+                                	Sai Nath University</option>
+
+                                <option value="10603/39193" >
+                                	Sambalpur University</option>
+
+                                <option value="10603/6614" >
+                                	Sam Higginbottom Institute of Agriculture, Technology and Sciences</option>
+
+                                <option value="10603/237335" >
+                                	Sangam University</option>
+
+                                <option value="10603/228028" >
+                                	Sant Baba Bhag Singh University</option>
+
+                                <option value="10603/4866" >
+                                	Sant Gadge Baba Amravati University</option>
+
+                                <option value="10603/3303" >
+                                	Sant Longowal Institute of Engineering and Technology</option>
+
+                                <option value="10603/208994" >
+                                	Santosh Deemed to be University</option>
+
+                                <option value="10603/7217" >
+                                	Sardar Patel University</option>
+
+                                <option value="10603/309832" >
+                                	Sarvepalli Radhakrishnan University</option>
+
+                                <option value="10603/13481" >
+                                	SASTRA University</option>
+
+                                <option value="10603/287142" >
+                                	Sathyabama Institute of Science and Technology</option>
+
+                                <option value="10603/688" >
+                                	Saurashtra University</option>
+
+                                <option value="10603/7162" >
+                                	Saveetha University</option>
+
+                                <option value="10603/1979" >
+                                	Savitribai Phule Pune University</option>
+
+                                <option value="10603/332511" >
+                                	School of Planning and Architecture, Bhopal</option>
+
+                                <option value="10603/206431" >
+                                	SGT University</option>
+
+                                <option value="10603/88392" >
+                                	Sharda University</option>
+
+                                <option value="10603/1976" >
+                                	Shivaji University</option>
+
+                                <option value="10603/149099" >
+                                	Shiv Nadar University</option>
+
+                                <option value="10603/230267" >
+                                	Shobhit University, Gangoh</option>
+
+                                <option value="10603/2204" >
+                                	Shobhit University, Meerut</option>
+
+                                <option value="10603/15596" >
+                                	Shoolini University of Biotechnology and Management Sciences</option>
+
+                                <option value="10603/287916" >
+                                	Shree Somnath Sanskrit University</option>
+
+                                <option value="10603/4115" >
+                                	Shri Jagdishprasad Jhabarmal Tibarewala University</option>
+
+                                <option value="10603/19459" >
+                                	Shri Lal Bahadur Shastri National Sanskrit University</option>
+
+                                <option value="10603/8168" >
+                                	Shri Mata Vaishno Devi University</option>
+
+                                <option value="10603/257539" >
+                                	Shri Ramswaroop Memorial University</option>
+
+                                <option value="10603/207914" >
+                                	Shri Vaishnav Vidyapeeth Vishwavidyalaya</option>
+
+                                <option value="10603/107620" >
+                                	Shri Venkateshwara University, Uttar Pradesh</option>
+
+                                <option value="10603/219588" >
+                                	Sidho Kanho Birsha University</option>
+
+                                <option value="10603/329194" >
+                                	Sido Kanhu Murmu University</option>
+
+                                <option value="10603/39380" >
+                                	Sikkim Manipal University</option>
+
+                                <option value="10603/191975" >
+                                	Sikkim University</option>
+
+                                <option value="10603/6077" >
+                                	Siksha "O" Anusandhan University</option>
+
+                                <option value="10603/17516" >
+                                	Singhania University</option>
+
+                                <option value="10603/191674" >
+                                	Sir Padampat Singhania University</option>
+
+                                <option value="10603/4601" >
+                                	SNDT Womens University</option>
+
+                                <option value="10603/49496" >
+                                	Solapur University</option>
+
+                                <option value="10603/217959" >
+                                	South Asian University</option>
+
+                                <option value="10603/5173" >
+                                	Sree Sankaracharya University of Sanskrit</option>
+
+                                <option value="10603/237517" >
+                                	Sri Balaji Vidyapeeth</option>
+
+                                <option value="10603/37944" >
+                                	Sri Chandrasekharendra  Saraswathi Viswa Mahavidyalaya</option>
+
+                                <option value="10603/205437" >
+                                	Sri Devaraj Urs Academy of Higher Education and Research</option>
+
+                                <option value="10603/236059" >
+                                	Sri Guru Granth Sahib World University</option>
+
+                                <option value="10603/5018" >
+                                	Sri Krishnadevaraya University</option>
+
+                                <option value="10603/223706" >
+                                	Srinivas University</option>
+
+                                <option value="10603/6712" >
+                                	Sri Padmavathi Womens University</option>
+
+                                <option value="10603/4527" >
+                                	Sri Ramachandra Institute of Higher Education and Research</option>
+
+                                <option value="10603/148513" >
+                                	Sri Sai University</option>
+
+                                <option value="10603/125505" >
+                                	Sri Sathya Sai Institute of Higher Learning</option>
+
+                                <option value="10603/102588" >
+                                	Sri Satya Sai University of Technology & Medical Sciences</option>
+
+                                <option value="10603/203521" >
+                                	Sri Venkateswara Institute of Medical Sciences</option>
+
+                                <option value="10603/7768" >
+                                	Sri Venkateswara University</option>
+
+                                <option value="10603/6500" >
+                                	SRM University</option>
+
+                                <option value="10603/6015" >
+                                	St. Peter’s Institute of Higher Education and Research</option>
+
+                                <option value="10603/33706" >
+                                	Suamandeep Vidyapeeth University</option>
+
+                                <option value="10603/230415" >
+                                	SunRise University</option>
+
+                                <option value="10603/6421" >
+                                	Suresh Gyan Vihar University</option>
+
+                                <option value="10603/176011" >
+                                	Sushant University (earlier Ansal University)</option>
+
+                                <option value="10603/231823" >
+                                	Swami Rama Himalayan University</option>
+
+                                <option value="10603/5404" >
+                                	Swami Ramanand Teerth Marathwada University</option>
+
+                                <option value="10603/24235" >
+                                	Swami Vivekanad Subharti University</option>
+
+                                <option value="10603/7384" >
+                                	Swami Vivekananda Yoga Anusandhana Sansthana</option>
+
+                                <option value="10603/203537" >
+                                	Swami Vivekanand University</option>
+
+                                <option value="10603/173854" >
+                                	Swarnim Gujarat Sports University</option>
+
+                                <option value="10603/8514" >
+                                	Symbiosis International University</option>
+
+                                <option value="10603/221954" >
+                                	Tamil Nadu Agricultural University</option>
+
+                                <option value="10603/76632" >
+                                	Tamil Nadu Dr. Ambedkar Law University</option>
+
+                                <option value="10603/3323" >
+                                	Tamilnadu Physical Education and Sports University</option>
+
+                                <option value="10603/8505" >
+                                	Tamil Nadu Teachers Education University, Chennai</option>
+
+                                <option value="10603/1023" >
+                                	Tamil University</option>
+
+                                <option value="10603/219875" >
+                                	Tantia University</option>
+
+                                <option value="10603/2704" >
+                                	Tata Institute of Social Sciences</option>
+
+                                <option value="10603/299241" >
+                                	Techno India University</option>
+
+                                <option value="10603/12348" >
+                                	Teerthanker Mahaveer University</option>
+
+                                <option value="10603/6253" >
+                                	TERI School of Advanced Studies</option>
+
+                                <option value="10603/8988" >
+                                	Tezpur University</option>
+
+                                <option value="10603/211276" >
+                                	Thapar Institute of Engineering and Technology</option>
+
+                                <option value="10603/108933" >
+                                	The English & Foreign Languages University, Hyderabad</option>
+
+                                <option value="10603/15473" >
+                                	The Gandhigram Rural Institute</option>
+
+                                <option value="10603/12324" >
+                                	The ICFAI University, Dehradun</option>
+
+                                <option value="10603/239328" >
+                                	The IIHMR University, Jaipur</option>
+
+                                <option value="10603/224887" >
+                                	The Indian Law Institute, New Delhi</option>
+
+                                <option value="10603/340736" >
+                                	The National Academy of Legal Studies and Research (NALSAR) University of Law</option>
+
+                                <option value="10603/214511" >
+                                	The National University of Advanced Legal Studies</option>
+
+                                <option value="10603/72332" >
+                                	The Northcap University</option>
+
+                                <option value="10603/204186" >
+                                	The Tamil Nadu Dr. M.G.R. Medical University</option>
+
+                                <option value="10603/20736" >
+                                	The University of Burdwan</option>
+
+                                <option value="10603/221937" >
+                                	The West Bengal National University of Juridical Sciences</option>
+
+                                <option value="10603/287711" >
+                                	Thiruvalluvar University</option>
+
+                                <option value="10603/262411" >
+                                	Thunchath Ezhuthachan Malayalam University</option>
+
+                                <option value="10603/2474" >
+                                	Tilak Maharashtra Vidyapeeth</option>
+
+                                <option value="10603/291177" >
+                                	Tilka Manjhi Bhagalpur University</option>
+
+                                <option value="10603/6594" >
+                                	Tripura University</option>
+
+                                <option value="10603/70188" >
+                                	Tumkur University</option>
+
+                                <option value="10603/218973" >
+                                	Uka Tarsadia University</option>
+
+                                <option value="10603/6114" >
+                                	University of Agricultural Sciences, Bangalore</option>
+
+                                <option value="10603/72733" >
+                                	University of Allahabad</option>
+
+                                <option value="10603/2852" >
+                                	University of Calcutta</option>
+
+                                <option value="10603/1412" >
+                                	University of Calicut</option>
+
+                                <option value="10603/6460" >
+                                	University of Delhi</option>
+
+                                <option value="10603/297435" >
+                                	University of Engineering and Management, Kolkata</option>
+
+                                <option value="10603/214284" >
+                                	University of Gour Banga</option>
+
+                                <option value="10603/1503" >
+                                	University of Hyderabad</option>
+
+                                <option value="10603/7726" >
+                                	University of Jammu</option>
+
+                                <option value="10603/4152" >
+                                	University of Kalyani</option>
+
+                                <option value="10603/3325" >
+                                	University of Kashmir</option>
+
+                                <option value="10603/4168" >
+                                	University of Kerala</option>
+
+                                <option value="10603/206148" >
+                                	University of Kota</option>
+
+                                <option value="10603/7735" >
+                                	University of Lucknow</option>
+
+                                <option value="10603/2997" >
+                                	University of Madras</option>
+
+                                <option value="10603/7742" >
+                                	University of Mumbai</option>
+
+                                <option value="10603/4143" >
+                                	University of Mysore</option>
+
+                                <option value="10603/11749" >
+                                	University of North Bengal</option>
+
+                                <option value="10603/41368" >
+                                	University of Petroleum and Energy Studies (UPES)</option>
+
+                                <option value="10603/12432" >
+                                	University of Rajasthan</option>
+
+                                <option value="10603/160102" >
+                                	University of Science and Technology, Meghalaya</option>
+
+                                <option value="10603/9277" >
+                                	U P Rajarshi Tondon Open University</option>
+
+                                <option value="10603/8840" >
+                                	Utkal University</option>
+
+                                <option value="10603/206689" >
+                                	Uttarakhand Open University</option>
+
+                                <option value="10603/97087" >
+                                	Uttarakhand Sanskrit University</option>
+
+                                <option value="10603/143668" >
+                                	Uttarakhand Technical University</option>
+
+                                <option value="10603/161697" >
+                                	Uttaranchal University</option>
+
+                                <option value="10603/175227" >
+                                	Vardhaman Mahaveer Open University, Kota</option>
+
+                                <option value="10603/7732" >
+                                	V. B. S. Purvanchal University</option>
+
+                                <option value="10603/2515" >
+                                	Veer Narmad South Gujarat University</option>
+
+                                <option value="10603/89412" >
+                                	Veer Surendra Sai University of Technology</option>
+
+                                <option value="10603/343414" >
+                                	Vellore Institute of Technology (VIT-AP)</option>
+
+                                <option value="10603/8140" >
+                                	Vels University</option>
+
+                                <option value="10603/9445" >
+                                	Vel Tech Dr. R R & Dr. S R Technical University</option>
+
+                                <option value="10603/33715" >
+                                	Vidyasagar University</option>
+
+                                <option value="10603/230424" >
+                                	Vignans Foundation for Science Technology and Research</option>
+
+                                <option value="10603/290640" >
+                                	Vijayanagara Sri Krishnadevaraya University, Bellary</option>
+
+                                <option value="10603/133004" >
+                                	Vikram University</option>
+
+                                <option value="10603/182121" >
+                                	Vinayaka Missions Research Foundation</option>
+
+                                <option value="10603/213388" >
+                                	Vinoba Bhave University</option>
+
+                                <option value="10603/19453" >
+                                	Visva Bharti University</option>
+
+                                <option value="10603/262011" >
+                                	Visvesvaraya Technological University, Belagavi</option>
+
+                                <option value="10603/37713" >
+                                	VIT University</option>
+
+                                <option value="10603/150336" >
+                                	Vivekananda Global University</option>
+
+                                <option value="10603/72826" >
+                                	Yashwantrao Chavan Maharashtra Open University</option>
+
+                                <option value="10603/219461" >
+                                	Yenepoya University</option>
+
+                                <option value="10603/92164" >
+                                	YMCA University of Science and Technology</option>
+
+                                <option value="10603/334093" >
+                                	Yogi Vemana University</option>
+                                </select><br/>
+                                <label for="query">for</label>
+                                <input type="text" size="50" id="query" name="query" value="yoga"/>
+                                <input type="submit" id="main-query-submit" class="btn btn-primary" value="Go" />
+                  
+                                <input type="hidden" value="300" name="rpp" />
+                                <input type="hidden" value="score" name="sort_by" />
+                                <input type="hidden" value="desc" name="order" />
+                                
+		<div class="discovery-search-appliedFilters">
+		<span>Current filters:</span>
+		
+			    <select id="filter_field_1" name="filter_field_1">
+				<option value="title">Title</option><option value="author">Researcher/Guide</option><option value="subject" selected="selected">Keyword</option><option value="dateIssued">Date Completed</option><option value="language">Language</option>
+				</select>
+				<select id="filter_type_1" name="filter_type_1">
+				<option value="equals" selected="selected">Equals</option><option value="contains">Contains</option><option value="authority">ID</option><option value="notequals">Not Equals</option><option value="notcontains">Not Contains</option><option value="notauthority">Not ID</option>
+				</select>
+				<input type="text" id="filter_value_1" name="filter_value_1" value="Ayurveda" size="45"/>
+				<input class="btn btn-default" type="submit" id="submit_filter_remove_1" name="submit_filter_remove_1" value="X" />
+				<br/>
+				
+		</div>
+
+<a class="btn btn-default" href="/jspui/simple-search">Start a new search</a>	
+		</form>
+		</div>
+
+		<div class="discovery-search-filters panel-body">
+		<h5>Add filters:</h5>
+		<p class="discovery-search-filters-hint">Use filters to refine the search results.</p>
+		<form action="simple-search" method="get">
+		<input type="hidden" value="" name="location" />
+		<input type="hidden" value="yoga" name="query" />
+		
+				    <input type="hidden" id="filter_field_1" name="filter_field_1" value="subject" />
+					<input type="hidden" id="filter_type_1" name="filter_type_1" value="equals" />
+					<input type="hidden" id="filter_value_1" name="filter_value_1" value="Ayurveda" />
+					
+		<select id="filtername" name="filtername">
+		<option value="title">Title</option><option value="author">Researcher/Guide</option><option value="subject">Keyword</option><option value="dateIssued">Date Completed</option><option value="language">Language</option>
+		</select>
+		<select id="filtertype" name="filtertype">
+		<option value="equals">Equals</option><option value="contains">Contains</option><option value="authority">ID</option><option value="notequals">Not Equals</option><option value="notcontains">Not Contains</option><option value="notauthority">Not ID</option>
+		</select>
+		<input type="text" id="filterquery" name="filterquery" size="45" required="required" />
+		<input type="hidden" value="300" name="rpp" />
+		<input type="hidden" value="score" name="sort_by" />
+		<input type="hidden" value="desc" name="order" />
+		<input class="btn btn-default" type="submit" value="Add" onclick="return validateFilters()" />
+		</form>
+		</div>        
+
+        
+   <div class="discovery-pagination-controls panel-footer">
+   <form action="simple-search" method="get">
+   <input type="hidden" value="" name="location" />
+   <input type="hidden" value="yoga" name="query" />
+	
+				    <input type="hidden" id="filter_field_1" name="filter_field_1" value="subject" />
+					<input type="hidden" id="filter_type_1" name="filter_type_1" value="equals" />
+					<input type="hidden" id="filter_value_1" name="filter_value_1" value="Ayurveda" />
+						
+           <label for="rpp">Results/Page</label>
+           <select name="rpp">
+
+                   <option value="5" >5</option>
+
+                   <option value="10" >10</option>
+
+                   <option value="15" >15</option>
+
+                   <option value="20" >20</option>
+
+                   <option value="25" >25</option>
+
+                   <option value="30" >30</option>
+
+                   <option value="35" >35</option>
+
+                   <option value="40" >40</option>
+
+                   <option value="45" >45</option>
+
+                   <option value="50" >50</option>
+
+                   <option value="55" >55</option>
+
+                   <option value="60" >60</option>
+
+                   <option value="65" >65</option>
+
+                   <option value="70" >70</option>
+
+                   <option value="75" >75</option>
+
+                   <option value="80" >80</option>
+
+                   <option value="85" >85</option>
+
+                   <option value="90" >90</option>
+
+                   <option value="95" >95</option>
+
+                   <option value="100" >100</option>
+
+           </select>
+           &nbsp;|&nbsp;
+
+               <label for="sort_by">Sort items by</label>
+               <select name="sort_by">
+                   <option value="score">Relevance</option>
+ <option value="dc.title_sort" >Title</option> <option value="dc.date.completed_dt" >???search.sort-by.dc.date.completed_dt???</option>
+               </select>
+
+           <label for="order">In order</label>
+           <select name="order">
+               <option value="ASC" >Ascending</option>
+               <option value="DESC" selected="selected">Descending</option>
+           </select>
+           <label for="etal">Authors/record</label>
+           <select name="etal">
+
+               <option value="0" selected="selected">All</option>
+<option value="1" >1</option>
+                       <option value="5" >5</option>
+
+                       <option value="10" >10</option>
+
+                       <option value="15" >15</option>
+
+                       <option value="20" >20</option>
+
+                       <option value="25" >25</option>
+
+                       <option value="30" >30</option>
+
+                       <option value="35" >35</option>
+
+                       <option value="40" >40</option>
+
+                       <option value="45" >45</option>
+
+                       <option value="50" >50</option>
+
+           </select>
+           <input class="btn btn-default" type="submit" name="submit_search" value="Update" />
+
+
+</form>
+   </div>
+</div>   
+
+<hr/>
+<div class="discovery-result-pagination row container">
+
+    
+	<div class="alert alert-info">Results 1-30 of 30 (Search time: 0.005 seconds).</div>
+    <ul class="pagination pull-right">
+	<li class="disabled"><span>previous</span></li>
+	
+	<li class="active"><span>1</span></li>
+
+	<li class="disabled"><span>next</span></li>
+	</ul>
+<!-- give a content to the div -->
+</div>
+<div class="discovery-result-results">
+
+
+
+
+
+    <div class="panel panel-info">
+    <div class="panel-heading">Item hits:</div>
+    <table align="center" class="table" summary="This table browses all dspace content">
+<tr>
+<th id="t1" class="oddRowEvenCol">Upload Date</th><th id="t2" class="oddRowOddCol">Title</th><th id="t3" class="oddRowEvenCol">Researcher</th><th id="t4" class="oddRowOddCol">Guide(s)</th></tr><tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">15-Aug-2015</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/47591">Physique&#x20;and&#x20;Fitness&#x20;with&#x20;Special&#x20;Reference&#x20;to&#x20;the&#x20;Relevent&#x20;Finding&#x20;of&#x20;Yoga&#x20;and&#x20;Ayurveda</a></td><td headers="t3" class="evenRowEvenCol" ><em>Tiwari,&#x20;Omnarayan</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Shankar%2C+Ganesh&amp;value_lang=en_US">Shankar,&#x20;Ganesh</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">26-May-2017</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/151677">Ayurveda&#x20;ani&#x20;astangayoga&#x20;sambandha</a></td><td headers="t3" class="oddRowEvenCol" ><em>Vaidya&#x20;Shrihari&#x20;Shankar&#x20;Vaidya,&#x20;P&#x20;R</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Kulkarni%2C+P+H&amp;value_lang=">Kulkarni,&#x20;P&#x20;H</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">14-Dec-2017</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/183995">Principles&#x20;of&#x20;ayurveda&#x20;and&#x20;yoga&#x20;found&#x20;in&#x20;vaikhanasa&#x20;gr&#x20;hyasutra</a></td><td headers="t3" class="evenRowEvenCol" ><em>Chakravarthy,&#x20;G&#x20;R&#x20;R</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Ramakrishnamacharya&amp;value_lang=">Ramakrishnamacharya</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">26-May-2017</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/151704">The&#x20;concept&#x20;of&#x20;svasthya&#x20;according&#x20;to&#x20;yoga&#x20;and&#x20;ayurveda</a></td><td headers="t3" class="oddRowEvenCol" ><em>Ravindra,&#x20;Kapare&#x20;Rupali</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Bapat%2C+Shailaja&amp;value_lang=">Bapat,&#x20;Shailaja</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">13-Jun-2017</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/154238">The&#x20;concept&#x20;of&#x20;svasthya&#x20;according&#x20;to&#x20;yoga&#x20;and&#x20;ayurveda</a></td><td headers="t3" class="evenRowEvenCol" ><em>Ravindra,&#x20;Kapare&#x20;Rupali</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Bapat%2C+Shailaja&amp;value_lang=">Bapat,&#x20;Shailaja</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">29-Jan-2019</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/227469">Use&#x20;of&#x20;an&#x20;integrated&#x20;approach&#x20;of&#x20;yoga&#x20;therapy&#x20;and&#x20;Ayurveda&#x20;in&#x20;the&#x20;management&#x20;of&#x20;migraine&#x20;headache</a></td><td headers="t3" class="oddRowEvenCol" ><em>Vasudha&#x20;M.&#x20;Sharma</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Nagendra+H.+R.&amp;value_lang=">Nagendra&#x20;H.&#x20;R.</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">20-Jul-2016</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/106893">The&#x20;concept&#x20;of&#x20;body&#x20;in&#x20;Indian&#x20;philosophy&#x20;with&#x20;special&#x20;reference&#x20;to&#x20;the&#x20;samkhya&#x20;and&#x20;yoga</a></td><td headers="t3" class="evenRowEvenCol" ><em>Bawa,&#x20;Harbans&#x20;Lal</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Kumar%2C+Vikram&amp;value_lang=">Kumar,&#x20;Vikram</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">11-Oct-2017</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/174884">Pranada&#x20;plus&#x20;kalp&#x20;in&#x20;tamak&#x20;shwas&#x20;chikitsa</a></td><td headers="t3" class="oddRowEvenCol" ><em>Bhandare,&#x20;Kishor&#x20;M</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Kulkarni%2C+P+H&amp;value_lang=">Kulkarni,&#x20;P&#x20;H</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">24-Sep-2018</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/216122">Potential&#x20;of&#x20;Rasahara&#x20;and&#x20;yoga&#x20;in&#x20;treatment&#x20;of&#x20;prediabetes&#x20;a&#x20;controlled&#x20;trial</a></td><td headers="t3" class="evenRowEvenCol" ><em>Datey,&#x20;Purnima</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Alex+Hankey+and+Nagendra+H.+R.">Alex&#x20;Hankey&#x20;and&#x20;Nagendra&#x20;H.&#x20;R.</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">20-Feb-2017</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/136082">Efficacy&#x20;and&#x20;potency&#x20;screening&#x20;of&#x20;available&#x20;field&#x20;and&#x20;market&#x20;samples&#x20;of&#x20;Kapikachu&#x20;seeds&#x20;Mucuna&#x20;species&#x20;on&#x20;the&#x20;basis&#x20;of&#x20;pharmacognostical&#x20;phytochemical&#x20;and&#x20;vrishya&#x20;Spermatogenesis&#x20;activity</a></td><td headers="t3" class="oddRowEvenCol" ><em>Murthy,&#x20;Soma&#x20;Narasimha</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Kulkarni%2C+Y.+R.&amp;value_lang=">Kulkarni,&#x20;Y.&#x20;R.</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">28-Mar-2017</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/142476">Preventive&#x20;medicine&#x20;in&#x20;Ayurveda&#x20;and&#x20;its&#x20;use&#x20;in&#x20;health&#x20;for&#x20;all</a></td><td headers="t3" class="evenRowEvenCol" ><em>Adinath,&#x20;Bhomaj&#x20;Rajaprakash</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Bhakare%2C+D+R&amp;value_lang=">Bhakare,&#x20;D&#x20;R</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">10-Apr-2017</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/145095">Ayurveda&#x20;and&#x20;sustainable&#x20;health&#x20;care&#x20;an&#x20;empirical&#x20;study</a></td><td headers="t3" class="oddRowEvenCol" ><em>Krishna&#x20;Prasad,&#x20;N.</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Indumati%2C+S.&amp;value_lang=">Indumati,&#x20;S.</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">20-Jul-2016</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/106665">Caraka&#x20;Mimamsa</a></td><td headers="t3" class="evenRowEvenCol" ><em>Joshi,&#x20;Prama.</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Sardeshmukh%2C+S.P.&amp;value_lang=">Sardeshmukh,&#x20;S.P.</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">20-Dec-2012</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/5691">A&#x20;study&#x20;of&#x20;informal&#x20;education&#x20;of&#x20;sanskrit&#x20;in&#x20;Kerala&#x20;with&#x20;special&#x20;reference&#x20;to&#x20;ayurveda</a></td><td headers="t3" class="oddRowEvenCol" ><em>Jayasree&#x20;M</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Vasudevan+T&amp;value_lang=en_US">Vasudevan&#x20;T</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">24-Jul-2017</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/160364">Vihara&#x20;_&#x20;cikitsa&#x20;through&#x20;yoga&#x20;_&#x20;procedures&#x20;rationale&#x20;scope&#x20;and&#x20;limits</a></td><td headers="t3" class="evenRowEvenCol" ><em>Sathaye,&#x20;Bhaskar&#x20;Vinayak</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Nanal%2C+B+P&amp;value_lang=">Nanal,&#x20;B&#x20;P</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">24-Jul-2017</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/160445">Role&#x20;of&#x20;shatavari&#x20;Kalp&#x20;and&#x20;garbhapalras&#x20;in&#x20;habitual&#x20;abortion</a></td><td headers="t3" class="oddRowEvenCol" ><em>Mahashabde,&#x20;Suneeta&#x20;H</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Tulpule%2C+Pushpa&amp;value_lang=">Tulpule,&#x20;Pushpa</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">13-Oct-2017</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/175445">Evaluation&#x20;of&#x20;anti_peptic&#x20;ulcer&#x20;activity&#x20;of&#x20;Glycerrhiza&#x20;glabra&#x20;_&#x20;Linn&#x20;_Yesti&#x20;Madhu_</a></td><td headers="t3" class="evenRowEvenCol" ><em>Pushpa&#x20;Latha,&#x20;K</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Deshpande%2C+A+P&amp;value_lang=">Deshpande,&#x20;A&#x20;P</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">16-Dec-2015</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/58557">A&#x20;critical&#x20;study&#x20;of&#x20;the&#x20;psychosomatic&#x20;theories&#x20;in&#x20;early&#x20;ancient&#x20;Indian&#x20;medicine&#x20;with&#x20;special&#x20;reference&#x20;to&#x20;charaka&#x20;and&#x20;sushruta</a></td><td headers="t3" class="oddRowEvenCol" ><em>Desai,S&#x20;M</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Bhatt%2CL+J&amp;value_lang=">Bhatt,L&#x20;J</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">21-Jul-2016</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/106967">Efficacy&#x20;of&#x20;raktbasti&#x20;in&#x20;the&#x20;management&#x20;of&#x20;tridoshaj&#x20;panduroga&#x20;W&#x20;S&#x20;R&#x20;to&#x20;thalassemia&#x20;major</a></td><td headers="t3" class="evenRowEvenCol" ><em>Bhavsar,&#x20;Atul&#x20;M.</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Nandurbarkar%2C+B.D.&amp;value_lang=">Nandurbarkar,&#x20;B.D.</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">27-Nov-2018</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/221740">Pharmaceutical&#x20;Standardization&#x20;of&#x20;Swarna&#x20;Makshika&#x20;Bhasma</a></td><td headers="t3" class="oddRowEvenCol" ><em>Singh&#x20;Neetu</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Chaudhary+Anand+K&amp;value_lang=">Chaudhary&#x20;Anand&#x20;K</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">12-Apr-2018</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/200106">Ahara&#x20;Vihara&#x20;Yougika&#x20;mattu&#x20;Ayurvediya&#x20;Chikitsapara&#x20;Vimarshatmaka&#x20;Adhyayana</a></td><td headers="t3" class="evenRowEvenCol" ><em>Ganesh&#x20;Bhat&#x20;A</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Chinnappa+Gowda+K&amp;value_lang=">Chinnappa&#x20;Gowda&#x20;K</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">10-Oct-2017</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/174072">The&#x20;study&#x20;for&#x20;efficacy&#x20;of&#x20;triushnadi&#x20;churna&#x20;as&#x20;medohara&#x20;in&#x20;the&#x20;management&#x20;of&#x20;dyslipidemia</a></td><td headers="t3" class="oddRowEvenCol" ><em>Salunkhe,&#x20;Snehlata&#x20;Sagar</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Kadlaskar%2C+Bharat+B&amp;value_lang=">Kadlaskar,&#x20;Bharat&#x20;B</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">21-Feb-2017</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/136366">A&#x20;Study&#x20;on&#x20;marketing&#x20;of&#x20;ayurveda&#x20;tourism&#x20;with&#x20;special&#x20;reference&#x20;to&#x20;Ernakulam&#x20;district&#x20;Kerala</a></td><td headers="t3" class="evenRowEvenCol" ><em>Mary&#x20;Anitha,&#x20;P.A</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Chandran%2C+C&amp;value_lang=">Chandran,&#x20;C</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">19-Feb-2015</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/36058">Study&#x20;of&#x20;charakas&#x20;concept&#x20;of&#x20;duddhi&#x20;with&#x20;special&#x20;emphasis&#x20;on&#x20;buddhi&#x20;pareeksha</a></td><td headers="t3" class="oddRowEvenCol" ><em>Sarade,&#x20;Girish</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Nanal%2C+Ramesh&amp;value_lang=en_US">Nanal,&#x20;Ramesh</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">20-Feb-2017</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/135907">Surgery&#x20;in&#x20;ancient&#x20;India&#x20;_&#x20;a&#x20;study&#x20;based&#x20;on&#x20;Sanskrit&#x20;sources</a></td><td headers="t3" class="evenRowEvenCol" ><em>Prathapan,&#x20;P&#x20;P</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Muraleemadhavan%2C+P+C&amp;value_lang=">Muraleemadhavan,&#x20;P&#x20;C</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">22-Apr-2013</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/8259">Developing&#x20;a&#x20;Standardized&#x20;Clinical&#x20;Protocol&#x20;for&#x20;Ayurveda&#x20;clinicians&#x20;based&#x20;on&#x20;Ayurveda&#x20;theory&#x20;and&#x20;clinical&#x20;practice</a></td><td headers="t3" class="oddRowEvenCol" ><em>Gangadharan,&#x20;G&#x20;G</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Vaidya%2C+Ramesh+Nanal&amp;value_lang=en_US">Vaidya,&#x20;Ramesh&#x20;Nanal</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">3-May-2016</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/87035">Role&#x20;of&#x20;RG4&#x20;an&#x20;Ayurvedic&#x20;formulation&#x20;in&#x20;the&#x20;management&#x20;of&#x20;side&#x20;effects&#x20;of&#x20;radiotherapy&#x20;of&#x20;oral&#x20;cavity&#x20;cancers</a></td><td headers="t3" class="evenRowEvenCol" ><em>Gujar,&#x20;Shweta&#x20;Rakesh</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Deshmukh%2C+Vineeta+V.&amp;value_lang=">Deshmukh,&#x20;Vineeta&#x20;V.</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">6-Apr-2016</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/79133">Role&#x20;of&#x20;RG4&#x20;an&#x20;Ayurvedic&#x20;formulation&#x20;in&#x20;the&#x20;management&#x20;of&#x20;side&#x20;effects&#x20;of&#x20;radiotherapy&#x20;of&#x20;oral&#x20;cavity&#x20;cancers</a></td><td headers="t3" class="oddRowEvenCol" ><em>Gujar,&#x20;Shweta&#x20;Rakesh</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Deshmukh%2C+Vineeta+V.&amp;value_lang=">Deshmukh,&#x20;Vineeta&#x20;V.</a></em></td></tr>
+<tr><td headers="t1" class="evenRowEvenCol" nowrap="nowrap" align="right">27-Jan-2017</td><td headers="t2" class="evenRowOddCol" ><a href="/jspui/handle/10603/130332">Comparative&#x20;study&#x20;of&#x20;efficacy&#x20;of&#x20;jatyadi&#x20;ghrita&#x20;pichu&#x20;and&#x20;yasthimadhu&#x20;ghrita&#x20;pichu&#x20;in&#x20;the&#x20;management&#x20;of&#x20;parikartika</a></td><td headers="t3" class="evenRowEvenCol" ><em>Rao,&#x20;Meda&#x20;Mruthyumjaya</em></td><td headers="t4" class="evenRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Kumar%2C+P.+Hemantha&amp;value_lang=">Kumar,&#x20;P.&#x20;Hemantha</a></em></td></tr>
+<tr><td headers="t1" class="oddRowEvenCol" nowrap="nowrap" align="right">29-Apr-2016</td><td headers="t2" class="oddRowOddCol" ><a href="/jspui/handle/10603/86597">A&#x20;randomized&#x20;controlled&#x20;clinical&#x20;trial&#x20;to&#x20;assess&#x20;the&#x20;role&#x20;of&#x20;mahatiktakam&#x20;kwatham&#x20;tablet&#x20;in&#x20;amlapitta&#x20;W&#x20;S&#x20;R&#x20;to&#x20;functional&#x20;dyspepsia</a></td><td headers="t3" class="oddRowEvenCol" ><em>Jithesh,&#x20;M</em></td><td headers="t4" class="oddRowOddCol" ><em><a href="/jspui/browse?type=author&amp;value=Gayal%2C+Renuka+K&amp;value_lang=">Gayal,&#x20;Renuka&#x20;K</a></em></td></tr>
+</table>
+
+    </div>
+
+</div>
+
+
+
+<div class="discovery-result-pagination row container">
+    
+	<div class="alert alert-info">Results 1-30 of 30 (Search time: 0.005 seconds).</div>
+    <ul class="pagination pull-right">
+<li class="disabled"><span>previous</span></li>
+
+<li class="active"><span>1</span></li>
+
+<li class="disabled"><span>next</span></li>
+</ul>
+<!-- give a content to the div -->
+</div>
+	</div>
+	<div class="col-md-3">
+<h3 class="facets">Discover</h3>
+<div id="facets" class="facetsBox">
+
+<div id="facet_subject" class="panel panel-success">
+	    <div class="panel-heading">Keyword</div>
+	    <ul class="list-group"><li class="list-group-item"><span class="badge">5</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=subject&amp;filterquery=Yoga&amp;filtertype=equals"
+                title="Filter by Yoga">
+                Yoga</a></li><li class="list-group-item"><span class="badge">2</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=subject&amp;filterquery=Cancer&amp;filtertype=equals"
+                title="Filter by Cancer">
+                Cancer</a></li><li class="list-group-item"><span class="badge">2</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=subject&amp;filterquery=Kayachikitsa&amp;filtertype=equals"
+                title="Filter by Kayachikitsa">
+                Kayachikitsa</a></li><li class="list-group-item"><span class="badge">2</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=subject&amp;filterquery=Panchamaveda&amp;filtertype=equals"
+                title="Filter by Panchamaveda">
+                Panchamaveda</a></li><li class="list-group-item"><span class="badge">2</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=subject&amp;filterquery=Pranayama&amp;filtertype=equals"
+                title="Filter by Pranayama">
+                Pranayama</a></li><li class="list-group-item"><span class="badge">2</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=subject&amp;filterquery=Radiotherapy&amp;filtertype=equals"
+                title="Filter by Radiotherapy">
+                Radiotherapy</a></li><li class="list-group-item"><span class="badge">2</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=subject&amp;filterquery=Swasthya&amp;filtertype=equals"
+                title="Filter by Swasthya">
+                Swasthya</a></li><li class="list-group-item"><span class="badge">2</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=subject&amp;filterquery=Yogashastra&amp;filtertype=equals"
+                title="Filter by Yogashastra">
+                Yogashastra</a></li><li class="list-group-item"><span class="badge">1</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=subject&amp;filterquery=Aharavihara&amp;filtertype=equals"
+                title="Filter by Aharavihara">
+                Aharavihara</a></li><li class="list-group-item"><span class="badge">1</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=subject&amp;filterquery=Amashayavrana&amp;filtertype=equals"
+                title="Filter by Amashayavrana">
+                Amashayavrana</a></li><li class="list-group-item"><span style="visibility: hidden;">.</span>
+	        
+            
+            <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;subject_page=1"><span class="pull-right">next ></span></a>
+            </li></ul></div><div id="facet_dateIssued" class="panel panel-success">
+	    <div class="panel-heading">Year Completed</div>
+	    <ul class="list-group"><li class="list-group-item"><span class="badge">15</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=dateIssued&amp;filterquery=%5B2010+TO+2019%5D&amp;filtertype=equals"
+                title="Filter by 2010 - 2019">
+                2010 - 2019</a></li><li class="list-group-item"><span class="badge">2</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=dateIssued&amp;filterquery=%5B2000+TO+2009%5D&amp;filtertype=equals"
+                title="Filter by 2000 - 2009">
+                2000 - 2009</a></li><li class="list-group-item"><span class="badge">5</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=dateIssued&amp;filterquery=%5B1990+TO+1999%5D&amp;filtertype=equals"
+                title="Filter by 1990 - 1999">
+                1990 - 1999</a></li><li class="list-group-item"><span class="badge">2</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=dateIssued&amp;filterquery=%5B1980+TO+1989%5D&amp;filtertype=equals"
+                title="Filter by 1980 - 1989">
+                1980 - 1989</a></li></ul></div><div id="facet_language" class="panel panel-success">
+	    <div class="panel-heading">Language</div>
+	    <ul class="list-group"><li class="list-group-item"><span class="badge">24</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=language&amp;filterquery=English&amp;filtertype=equals"
+                title="Filter by English">
+                English</a></li><li class="list-group-item"><span class="badge">5</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=language&amp;filterquery=Other&amp;filtertype=equals"
+                title="Filter by Other">
+                Other</a></li><li class="list-group-item"><span class="badge">1</span> <a href="/jspui/simple-search?query=yoga&amp;sort_by=score&amp;order=desc&amp;rpp=300&amp;filter_field_1=subject&amp;filter_type_1=equals&amp;filter_value_1=Ayurveda&amp;etal=0&amp;filtername=language&amp;filterquery=Kannada&amp;filtertype=equals"
+                title="Filter by Kannada">
+                Kannada</a></li></ul></div>
+
+</div>
+
+
+    </div>
+    </div>       
+
+</div>
+</main>
+            
+             <footer class="navbar navbar-inverse navbar-bottom">
+             <div id="designedby" class="container text-muted">
+             Theme by <a href="http://www.cineca.it"><img
+                                    src="/jspui/image/logo-cineca-small.png"
+                                    alt="Logo CINECA" /></a>
+			<div id="footer_feedback" class="pull-right">                                    
+                                <p class="text-muted"><a target="_blank" href="http://www.dspace.org/">DSpace Software</a> Copyright&nbsp;&copy;&nbsp;2002-2013&nbsp; <a target="_blank" href="http://www.duraspace.org/">Duraspace</a>&nbsp;-
+                                <a target="_blank" href="/jspui/feedback">Feedback</a>
+                                <a href="/jspui/htmlmap"></a></p>
+                                </div>
+			</div>
+    </footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155197711-1"></script>
+	<script>
+	 window.dataLayer = window.dataLayer || [];
+	 function gtag(){dataLayer.push(arguments);}
+	 gtag('js', new Date());
+
+	 gtag('config', 'UA-155197711-1');
+	</script>
+    </body>
+</html>
+
