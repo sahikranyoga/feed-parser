@@ -14,7 +14,7 @@
 	<name>feed-parser</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>14</java.version>
+		<java.version>16</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -40,6 +40,12 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.5</version>
         </dependency>
+
+		<dependency>
+			<groupId>com.sahikran</groupId>
+			<artifactId>page-parser</artifactId>
+			<version>1.0</version>
+		</dependency>
 
 		<dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -70,7 +76,6 @@
 			<version>2.0.9</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>

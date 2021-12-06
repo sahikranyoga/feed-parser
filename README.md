@@ -8,4 +8,3 @@ This service reads the messages (url, url type) from SQS, parses the web URLs (H
 The output of these parsers is stored in a database for further processing.
 
       Messages(input)   --> Parser    --> Items created   --> staged in a database
-# feed-parser

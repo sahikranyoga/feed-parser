@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class CrawlerResult {
     
-    private final Map<String, Integer> feedItemsCount;
+    private final Map<String, Integer> feedItemsCount;// string is url and int is the item count
     private final int urlsVisitedCount;
 
     public CrawlerResult(Map<String, Integer> feedItemsCount, int urlsVisitedCount){
