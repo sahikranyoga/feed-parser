@@ -4,11 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sahikran.model.CrawlerResult;
 import com.sahikran.model.PageMessage;
 import com.sahikran.parser.PageParserFactoryImpl.ParserType;
+import com.sahikran.service.AsyncObjectStorageService;
 import com.sahikran.service.WebCrawlerService;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -37,6 +39,9 @@ public class WebCrawlerControllerTest {
     @MockBean
     private WebCrawlerService webCrawlerService;
 
+    @Mock
+    private AsyncObjectStorageService asyncObjectStorageService;
+
     @Test
     @DisplayName("pass multiple messages to fetch CrawlerResult output from the service implementation. " +
     "The crawler service is expected to parse messages for url type " + 
@@ -62,7 +67,7 @@ public class WebCrawlerControllerTest {
 
         verify(webCrawlerService, times(1)).crawl(any());
         // verify the method call to saveIntoDatabase for single time
-        
+        // verify(asyncObjectStorageService, times(1)).SaveAsync(any());
         // verify if the result has the expected count of feed items
 
     }
@@ -71,7 +76,7 @@ public class WebCrawlerControllerTest {
         PageMessage pageMessage = new PageMessage.Builder()
                     .setPageMessageId(1000l)
                     .setPageUrl("https://www.ijoy.org.in/rss.asp?issn=0973-6131;year=2021;volume=14;issue=2;month=May-August")
-                    .setParsertype(ParserType.RSS)
+                    .setParserType(ParserType.RSS)
                     .build();
         return List.of(pageMessage);
     }

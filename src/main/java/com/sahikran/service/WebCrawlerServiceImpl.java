@@ -1,9 +1,8 @@
 package com.sahikran.service;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 
@@ -22,10 +21,17 @@ public class WebCrawlerServiceImpl implements WebCrawlerService {
 
     private static final Logger log = LoggerFactory.getLogger(WebCrawlerServiceImpl.class);
 
-    private ParseService parseService;
+    private ParseService<Result> parseService;
+
+    private AsyncObjectStorageService asyncObjectStorageService;
 
     @Autowired
-    public void setParseService(ParseService parseService){
+    public void setAsyncObjectStorageService(AsyncObjectStorageService asyncObjectStorageService){
+        this.asyncObjectStorageService = asyncObjectStorageService;
+    }
+
+    @Autowired
+    public void setParseService(ParseService<Result> parseService){
         this.parseService = parseService;
     }
 
@@ -37,19 +43,22 @@ public class WebCrawlerServiceImpl implements WebCrawlerService {
     public CrawlerResult crawl(List<PageMessage> pageMessages) {
         Map<String, Integer> feedItemsCount = new ConcurrentHashMap<>();
         // for each message, read the url type and based on url type, parse the url content.
+        log.info("crawling started for messages " + pageMessages.size());
         pageMessages.stream()
                     .parallel()
                     .forEach(
                         m -> {
-                            try {
                                 log.info("crawling page message " + m.getPageUrl());
-                                // TODO instead of .get() which blocks, chain with any other method that saves into database
-                                Result result = parseService.parse(m).get();
+                                CompletableFuture<Result> resultFuture = parseService.parse(m);
+                                resultFuture.thenComposeAsync(result -> asyncObjectStorageService.SaveAsync(result));
+                                Result result;
+                                try {
+                                    result = resultFuture.get();
+                                } catch (InterruptedException | ExecutionException e) {
+                                    throw new CrawlServiceException("execption occurred when feteching Result object ", e);
+                                }
                                 feedItemsCount.compute(result.getPageUrl(), 
                                     (k, v) -> (v == null) ? result.getFeedItems().size() : v + result.getFeedItems().size());
-                            } catch (InterruptedException | ExecutionException e) {
-                                throw new CrawlServiceException("exception occurred in fetching result object ", e);
-                            }
                         }
                     );
         log.info("crawler completed for received page messages");
@@ -58,5 +67,5 @@ public class WebCrawlerServiceImpl implements WebCrawlerService {
                 .setFeedItemsCount(feedItemsCount)
                 .build();
     }
-    
+
 }

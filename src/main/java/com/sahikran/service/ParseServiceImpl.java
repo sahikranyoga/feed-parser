@@ -19,31 +19,35 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ParseServiceImpl implements ParseService {
+public class ParseServiceImpl implements ParseService<Result> {
 
     private static final Logger log = LoggerFactory.getLogger(ParseServiceImpl.class);
 
-    private String searchString;
+    private final String searchString;
 
-    private Duration timeout;
+    private final Duration timeout;
 
     @Autowired
     public ParseServiceImpl(@Value("${parser.searchString}") String searchString, @Value("${parser.timeout}") long timeoutInSeconds){
         this.searchString = searchString;
         this.timeout = Duration.ofSeconds(timeoutInSeconds);
     }
-
+    
     @Override
     @Async
     public CompletableFuture<Result> parse(PageMessage pageMessage) {
         log.info("initilizaing parser on thread: " + Thread.currentThread().getName());
         PageParserFactory pageParserFactory = new PageParserFactoryImpl(searchString, timeout);
         PageParser pageParser = pageParserFactory.get(pageMessage.getPageUrl(), pageMessage.getParserType());
-        try {
-            return CompletableFuture.completedFuture(pageParser.parse());
-        } catch (PageParserException e) {
-            throw new ParseServiceException("exception occurred when parsing ", e);
-        }
+        return CompletableFuture.supplyAsync(() -> {
+            try {
+                log.info("calling page parser");
+                return pageParser.parse();
+            } catch (PageParserException e) {
+                log.info("exception occurred " + e.getMessage());
+                throw new ParseServiceException("exception occurred when parsing ", e);
+            }
+        });
     }
 
 }

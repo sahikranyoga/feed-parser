@@ -4,6 +4,10 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+
+@JsonDeserialize(builder = CrawlerResult.Builder.class)
 public class CrawlerResult {
     
     private final Map<String, Integer> feedItemsCount;// string is url and int is the item count
@@ -22,6 +26,7 @@ public class CrawlerResult {
         return urlsVisitedCount;
     }
 
+    @JsonPOJOBuilder(withPrefix = "set")
     public static final class Builder{
 
         private Map<String, Integer> feedItemsCount;
