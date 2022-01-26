@@ -2,9 +2,7 @@ package com.sahikran.keygenservice;
 
 import java.time.Instant;
 import java.util.Deque;
-import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedDeque;
-import java.util.concurrent.ConcurrentSkipListSet;
 
 import com.sahikran.exception.KeyGenException;
 
@@ -34,13 +32,13 @@ public class RateKeyGenerator implements UniqueKeyGenerator {
         // else generate 100 (based on maximum tokens) unique keys and store them
         // also pop and return one
         if(keys.isEmpty()){
-            log.info("generating keys");
+            log.debug("generating keys");
             // generate and store
             for(int i = 0; i < MAX_TOKENS; i++){
                 keys.offer((Instant.now().toEpochMilli() + i));
             }
         }
-        log.info("rate token generated for thread " + Thread.currentThread().getName());
+        log.debug("rate token generated for thread " + Thread.currentThread().getName());
         return keys.pop();
     }
 }

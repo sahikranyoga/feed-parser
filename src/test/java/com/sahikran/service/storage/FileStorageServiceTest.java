@@ -1,4 +1,4 @@
-package com.sahikran.service;
+package com.sahikran.service.storage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sahikran.model.FeedItem;
@@ -25,12 +26,12 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class ObjectStorageServiceTest {
+public class FileStorageServiceTest {
 
-    private static final Logger log = LoggerFactory.getLogger(ObjectStorageServiceTest.class);
+    private static final Logger log = LoggerFactory.getLogger(FileStorageServiceTest.class);
     
     @Autowired
-    private ObjectStorageService objectStorageService;
+    private FileStorageService objectStorageService;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -64,8 +65,10 @@ public class ObjectStorageServiceTest {
     }
 
     @Test
-    public void whenMultipleFeedItemsPassed_returnSuccessMessageOnSave(){
-        assertTrue(objectStorageService.save(getMultipleFeeds()));
+    public void whenMultipleFeedItemsPassed_returnFileNamesSaved(){
+        Set<String> files = objectStorageService.save(getMultipleFeeds());
+        assertNotNull(files);
+        assertEquals(2, files.size());
     }
 
     private List<FeedItem> getMultipleFeeds(){

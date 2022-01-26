@@ -2,6 +2,7 @@ package com.sahikran.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
@@ -10,6 +11,9 @@ import com.sahikran.exception.CrawlServiceException;
 import com.sahikran.model.CrawlerResult;
 import com.sahikran.model.PageMessage;
 import com.sahikran.model.Result;
+import com.sahikran.service.event.EventService;
+import com.sahikran.service.event.GenericEventMessage;
+import com.sahikran.service.storage.AsyncObjectStorageService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +28,8 @@ public class WebCrawlerServiceImpl implements WebCrawlerService {
     private ParseService<Result> parseService;
 
     private AsyncObjectStorageService asyncObjectStorageService;
+
+    private EventService<Set<String>> asyncEventService;
 
     @Autowired
     public void setAsyncObjectStorageService(AsyncObjectStorageService asyncObjectStorageService){
@@ -49,8 +55,17 @@ public class WebCrawlerServiceImpl implements WebCrawlerService {
                     .forEach(
                         m -> {
                                 log.info("crawling page message " + m.getPageUrl());
+                                
                                 CompletableFuture<Result> resultFuture = parseService.parse(m);
-                                resultFuture.thenComposeAsync(result -> asyncObjectStorageService.SaveAsync(result));
+                                resultFuture.thenComposeAsync(result -> asyncObjectStorageService.SaveAsync(result))
+                                            /**
+                                             * asynchronously publish an event to pass 
+                                             * the file names and their location, so that 
+                                             * they can be uploaded to AWS S3 bucket
+                                             *  */ 
+                                            .thenApplyAsync(files -> asyncEventService.publishEvent(new GenericEventMessage<>(files)));
+                                
+                                // fetch the result object and read it to calculate the item count
                                 Result result;
                                 try {
                                     result = resultFuture.get();

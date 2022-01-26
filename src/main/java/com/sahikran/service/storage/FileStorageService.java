@@ -1,10 +1,12 @@
-package com.sahikran.service;
+package com.sahikran.service.storage;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sahikran.exception.ObjectStorageException;
@@ -18,9 +20,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ObjectStorageService implements StorageService<FeedItem> {
+public class FileStorageService implements StorageService<FeedItem, String> {
 
-    private static final Logger log = LoggerFactory.getLogger(ObjectStorageService.class);
+    private static final Logger log = LoggerFactory.getLogger(FileStorageService.class);
 
     private final String outputFilePath;
 
@@ -39,7 +41,7 @@ public class ObjectStorageService implements StorageService<FeedItem> {
     }
 
     @Autowired
-    public ObjectStorageService(@Value("${feed.files.directory}") String outputFilePath ){
+    public FileStorageService(@Value("${feed.files.directory}") String outputFilePath ){
         Objects.requireNonNull(outputFilePath, "no value to the output file directory");
         this.outputFilePath = outputFilePath;
     }
@@ -72,9 +74,10 @@ public class ObjectStorageService implements StorageService<FeedItem> {
     }
 
     @Override
-    public boolean save(List<FeedItem> feedItems) {
+    public Set<String> save(List<FeedItem> feedItems) {
         log.info("Received feeds " + feedItems.size());
         final Path outputFolder;
+        Set<String> filesCreated = new ConcurrentSkipListSet<>();
         try {
             outputFolder = createOutputPath();
         } catch (IOException e) {
@@ -85,11 +88,13 @@ public class ObjectStorageService implements StorageService<FeedItem> {
         // once they reach a maximum, push them to s3 asynchronously using spring event
         feedItems.stream().parallel().forEach(
             feedItem -> {
-                long fileNameKey = rateKeyGenerator.generateUniqueKey();
-                saveFeedItemIntoFile(outputFolder, String.valueOf(fileNameKey), feedItem);
+                long keyId = rateKeyGenerator.generateUniqueKey();
+                String fileName = String.valueOf(keyId);
+                saveFeedItemIntoFile(outputFolder, fileName, feedItem);
+                filesCreated.add(fileName);
             }
         );
-        return true;
+        return filesCreated;
     }
 
     public Path createOutputPath() throws IOException{

@@ -17,7 +17,7 @@ public class AsyncConfiguration implements AsyncConfigurer {
     private static final Logger log = LoggerFactory.getLogger(AsyncConfiguration.class);
 
     @Override
-    @Bean
+    @Bean(name = "asyncExecutor")
     public Executor getAsyncExecutor() {
         ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
         threadPoolTaskExecutor.setThreadNamePrefix("async-exec");
@@ -25,7 +25,6 @@ public class AsyncConfiguration implements AsyncConfigurer {
         threadPoolTaskExecutor.setQueueCapacity(20);
         threadPoolTaskExecutor.setMaxPoolSize(20);
         threadPoolTaskExecutor.afterPropertiesSet();
-        //threadPoolTaskExecutor.initialize();
         log.info("async executor intialized");
         return threadPoolTaskExecutor;
     } 

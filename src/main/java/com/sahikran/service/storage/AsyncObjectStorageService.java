@@ -1,7 +1,7 @@
-package com.sahikran.service;
+package com.sahikran.service.storage;
 
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
 
 import com.sahikran.model.FeedItem;
 import com.sahikran.model.Result;
@@ -12,15 +12,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class AsyncObjectStorageService {
     
-    private StorageService<FeedItem> objectStorageService;
+    private StorageService<FeedItem, String> objectStorageService;
 
     @Autowired
-    public void setStorageService(StorageService<FeedItem> objectStorageService){
+    public void setStorageService(StorageService<FeedItem, String> objectStorageService){
         this.objectStorageService = objectStorageService;
     }
 
-    public CompletableFuture<Boolean> SaveAsync(Result result){
-            CompletableFuture<Boolean> resultFuture = 
+    public CompletableFuture<Set<String>> SaveAsync(Result result){
+            CompletableFuture<Set<String>> resultFuture = 
                     CompletableFuture.supplyAsync(() -> 
                         objectStorageService.save(result.getFeedItems())
                     );

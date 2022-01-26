@@ -2,10 +2,15 @@ package com.sahikran.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import com.sahikran.model.CrawlerResult;
+import com.sahikran.model.PageMessage;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,15 +32,17 @@ public class WebCrawlerControllerIntegrationTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
-    @Test
-    public void whenCrawlApiIsCalled_returnOKStatusCode(){
+    @ParameterizedTest
+    @MethodSource("com.sahikran.controller.WebCrawlerControllerTest#provideMutlipleMessageInputs")
+    public void whenCrawlApiIsCalled_returnOKStatusCode
+        (List<PageMessage> pageMessage, int expectedFeedItemCount, int expectedUrlsVisitedCount){
         ResponseEntity<CrawlerResult> response = 
         this.restTemplate.postForEntity("http://localhost:" + port + "/crawl", 
-            new HttpEntity<>(WebCrawlerControllerTest.getSingleMockMessage()), 
+            new HttpEntity<>(pageMessage), 
             CrawlerResult.class);
         
             assertEquals(HttpStatus.OK.value(), response.getStatusCode().value());
-            assertEquals(1, response.getBody().getFeedItemsCount().size());
-            assertEquals(1, response.getBody().getUrlsVisitedCount());
+            assertEquals(expectedFeedItemCount, response.getBody().getFeedItemsCount().size());
+            assertEquals(expectedUrlsVisitedCount, response.getBody().getUrlsVisitedCount());
     }
 }
